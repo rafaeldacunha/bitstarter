@@ -8,8 +8,8 @@ var infile =  'index.html';
 var text = new Buffer(30);
 //text = fs.readFile('index.html', 'utf-8', function read(err, data) {
 text = fs.readFileSync('index.html');
-console.log('---' + text);
-response.send(text);
+//console.log('---' + text);
+response.send(text.toString());
 });
 
 var port = process.env.PORT || 5000;
