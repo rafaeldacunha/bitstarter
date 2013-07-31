@@ -4,9 +4,9 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 var fs = require('fs');
-var infile =  "index.html";
+var infile =  'index.html';
 var text = "";
-fs.read(infile, function read(err, data) {
+fs.readFile('index.html', 'utf-8', function read(err, data) {
   if (err) throw err;
   text = data.toString();
   })
