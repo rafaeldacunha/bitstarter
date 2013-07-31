@@ -5,13 +5,11 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
 var fs = require('fs');
 var infile =  'index.html';
-var text = "";
-fs.readFile('index.html', 'utf-8', function read(err, data) {
-  if (err) throw err;
-  text = data.toString();
-  })
-  
-response.send('hello world bu hand');
+var text = new Buffer(30);
+//text = fs.readFile('index.html', 'utf-8', function read(err, data) {
+text = fs.readFileSync('index.html');
+console.log('---' + text);
+response.send(text);
 });
 
 var port = process.env.PORT || 5000;
