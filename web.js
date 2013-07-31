@@ -11,8 +11,8 @@ fs.read(infile, function read(err, data) {
   text = data.toString();
   })
   
-response.send(text);
-}
+response.send('hello world bu hand');
+});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
